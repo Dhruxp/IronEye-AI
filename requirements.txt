@@ -1,0 +1,8 @@
+ultralytics
+opencv-python
+numpy
+streamlit
+pandas
+pytest
+torch
+torchvision
