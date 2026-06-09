@@ -12,9 +12,9 @@ class BicepCurlAnalyser(BaseAnalyser):
             elbow,
             wrist
         )
-        if angle < 50:
+        if angle < 80:
             self.stage = "up"
-        if (angle > 140 and self.stage == "up"):
+        if (angle > 120 and self.stage == "up"):
             self.reps+=1
             self.stage = "down"
     def get_feedback(self):
