@@ -4,7 +4,7 @@ from src.analyzers.squat_analyser import SquatAnalyser
 from src.angle_util import angle_calc
 from src.exercise_factory import ExerciseFactory
 detector = PoseDetector()
-analyser = ExerciseFactory.create_exercise_analyser("bicep curl") # object from factory created
+analyser = ExerciseFactory.create_exercise_analyser("pushup") # object from factory created
 vid = cv2.VideoCapture("vids/bicepcurl_internet02.mp4") #internet sample
 cv2.namedWindow(
     "IronEye AI",
