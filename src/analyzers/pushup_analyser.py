@@ -16,7 +16,7 @@ class PushUpAnalyser(BaseAnalyser):
         if angle < 80:
             self.stage = "down"
         if (angle > 130 and self.stage == "down"):
-            self.count += 1
+            self.reps += 1
             self.stage = "up"
     def get_feedback(self):
         return "Good pushup form"

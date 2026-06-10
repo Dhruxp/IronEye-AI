@@ -5,7 +5,7 @@ from src.angle_util import angle_calc
 from src.exercise_factory import ExerciseFactory
 detector = PoseDetector()
 analyser = ExerciseFactory.create_exercise_analyser("pushup") # object from factory created
-vid = cv2.VideoCapture("vids/bicepcurl_internet02.mp4") #internet sample
+vid = cv2.VideoCapture("vids/pushup_internet03.mp4") #internet sample
 cv2.namedWindow(
     "IronEye AI",
     cv2.WINDOW_NORMAL
