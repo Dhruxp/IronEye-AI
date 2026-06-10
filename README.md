@@ -142,10 +142,10 @@ The current implementation supports squat analysis using:
 
 ### Phase 2: Multi-Exercise Support
 
-- [ ] Bicep Curl Analysis
-- [ ] Push-Up Analysis
+- [x] Bicep Curl Analysis
+- [x] Push-Up Analysis
 - [ ] Deadlift Analysis
-- [ ] Shoulder Press Analysis
+- [x] Shoulder Press Analysis
 - [ ] Lunge Analysis
 - [ ] Exercise Factory Architecture
 
