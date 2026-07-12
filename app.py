@@ -1,5 +1,5 @@
 import cv2
-from src.pose_detector import PoseDetector
+from src.pose.pose_detector import PoseDetector
 from src.analyzers.squat_analyser import SquatAnalyser
 from src.angle_util import angle_calc
 from src.exercise_factory import ExerciseFactory
