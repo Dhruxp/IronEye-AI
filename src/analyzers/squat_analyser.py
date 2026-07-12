@@ -16,7 +16,7 @@ class SquatAnalyser(BaseAnalyser):
         shoulder = kp[5] # check for coaching cues (1.4)
         hip = kp[11] # 1.4
         knee = kp[13] # 1,4
-        ankle = kp[15] # 1.4 # New initialisations to seperate 1.1 and 1.4 
+        ankle = kp[15] # 1.4 # New initialisations to seperate 1.1 and 1.4  
         torso_dx = shoulder[0] - hip[0]
         torso_dy = shoulder[1] - hip[1]
         torso_angle = abs(np.degrees(np.arctan2(torso_dy, torso_dx))) # 1.4 
