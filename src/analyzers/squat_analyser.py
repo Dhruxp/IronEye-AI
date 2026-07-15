@@ -2,6 +2,7 @@
 from src.analyzers.base_analyser import BaseAnalyser
 from src.angle_util import angle_calc
 import numpy as np # 1.4
+from src.feedback.feedback_engine import FeedbackEngine, FeedbackReport #1.6
 class SquatAnalyser(BaseAnalyser):
     def __init__(self):
         super().__init__()
@@ -36,22 +37,18 @@ class SquatAnalyser(BaseAnalyser):
         if (angle > 160 and self.stage == "down"):
             self.reps += 1
             self.stage = "up"
-    def get_feedback(self): # 1.4, multi feedback model 
+    def get_feedback(self): # 1.4, multi feedback model, #1.5 updated to give feedback through engine
         #if len(self.depths) == 0: (1.1 workflow)
             #return "No squats detected"
         #min_angle = min(self.depths)
         #if min_angle > 100:
             #return "Try to squat deeper"
         #return "Good squat depth"
-        feedback = []
-        if self.deepest_angle > 100:
-            feedback.append("Squat deeper")
-        if self.max_angle_lean > 35:
-            feedback.append("Excessive lean")
-        if self.knee_valg_detected:
-            feedback.append("Knee collapsing")
-        if len(feedback) == 0:
-            feedback.append("Form is good maintain")
-        return "|".join(feedback) # string needed in app.py 
+        metrics = {
+            "deepest_angle ": self.deepest_angle,
+            "torse_lean": self.max_angle_lean,
+            "knee_valgus": self.knee_valg_detected
+        }
+        return FeedbackEngine.generate("squat", metrics) #changed to use feedback engine (1.6)
     
 
